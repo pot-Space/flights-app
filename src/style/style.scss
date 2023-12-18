@@ -14,8 +14,6 @@ button {
    display: flex;
    column-gap: 24px;
    min-height: 100vh;
-
-   border: 1px solid;
 }
 
 aside {
@@ -27,8 +25,26 @@ aside {
    width: 370px;
 
    form {
-      margin-top: 20px;
+      padding: 32px 0;
       width: 100%;
+
+      .sorting,
+      .filter,
+      .amount-price,
+      .airlines {
+         display: flex;
+         flex-direction: column;
+
+         &:not(:first-child) {
+            margin-top: 20px;
+         }
+
+         legend {
+            font-weight: 600;
+         }
+      }
+
+
    }
 }
 
@@ -48,19 +64,34 @@ aside {
 main {
    display: flex;
    flex-direction: column;
+   align-items: center;
    padding-top: 20px;
    width: 100%;
+
+   .load-more {
+      margin-top: 20px;
+      padding: 0px 60px;
+      width: fit-content;
+      font-size: 20px;
+   }
 }
 
 .flight {
+   padding: 0 2px 2px;
+   width: 100%;
    background-color: $blue;
    border-radius: 4px;
    overflow: hidden;
+
+   &:nth-child(n+2) {
+      margin-top: 28px;
+   }
 
    &__header {
       padding: 2px 16px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       color: #fff;
 
       .price {
@@ -78,17 +109,116 @@ main {
       }
    }
 
-   &__from {
-      border-radius: 6px;
-      background-color: #fff;
+   &__body {
+      .card {
+         padding: 12px 14px;
+         border-radius: 6px;
+         background-color: #fff;
+
+         &:not(:first-child) {
+            margin-top: 4px;
+         }
+
+         &__header {
+            position: relative;
+            display: flex;
+            margin-bottom: 8px;
+            font-size: 18px;
+            column-gap: 6px;
+         }
+
+         &__body {
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+
+            .time-start {
+               .time {
+                  margin-right: 6px;
+                  font-size: 21px;
+               }
+            }
+
+            .time-end {
+               .time {
+                  margin-left: 6px;
+                  font-size: 21px;
+               }
+            }
+
+            .time-duration {
+               display: flex;
+               align-items: center;
+               font-size: 18px;
+
+               img {
+                  width: 16px;
+               }
+            }
+
+         }
+
+         &__connection {
+            position: relative;
+            margin-top: 4px;
+            background-color: #fff;
+            text-align: center;
+            color: $orange;
+
+            &::before,
+            &::after {
+               position: absolute;
+               content: '';
+               display: block;
+               width: 30%;
+               height: 1px;
+               top: 50%;
+               left: 10%;
+               background-color: $grey;
+            }
+
+            &::after {
+               left: 60%;
+            }
+         }
+
+         &__departure {
+            margin-top: 16px;
+         }
+      }
    }
 
-   .choose-flight {
+   .hint,
+   .arrow {
+      color: $light-blue;
+   }
+
+   .hint {
+      font-size: 16px;
+   }
+
+   hr {
+      margin: 0;
+      width: 100%;
+      height: 1px;
+      border: none;
+      color: $light-grey;
+      background-color: $light-grey;
+   }
+
+   &__choose-btn {
+      margin-top: 8px;
       padding: 12px 0;
       width: 100%;
       background-color: $orange;
       border: none;
+      border-radius: 4px;
       color: #fff;
       text-transform: uppercase;
+      transition: all 0.3s;
+
+      &:hover {
+         background-color: #F59A47;
+      }
    }
 }
