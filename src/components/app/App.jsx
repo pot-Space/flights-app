@@ -6,6 +6,9 @@ import data from "../../services/flights.json";
 
 class App extends Component {
 
+   componentDidMount() {
+      console.log(data.result.flights[0]);
+   }
 
    render() {
       return (
@@ -15,9 +18,8 @@ class App extends Component {
             </aside>
 
             <main>
-               <FlightsItem></FlightsItem>
+               <FlightsItem />
             </main>
-
          </div>
       )
    }

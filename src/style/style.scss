@@ -121,10 +121,11 @@ main {
 
          &__header {
             position: relative;
-            display: flex;
             margin-bottom: 8px;
-            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
             column-gap: 6px;
+            font-size: 18px;
          }
 
          &__body {
@@ -139,15 +140,9 @@ main {
                }
             }
 
-            .time-end {
-               .time {
-                  margin-left: 6px;
-                  font-size: 21px;
-               }
-            }
-
             .time-duration {
                display: flex;
+               column-gap: 4px;
                align-items: center;
                font-size: 18px;
 
@@ -156,6 +151,12 @@ main {
                }
             }
 
+            .time-end {
+               .time {
+                  margin-left: 6px;
+                  font-size: 21px;
+               }
+            }
          }
 
          &__connection {

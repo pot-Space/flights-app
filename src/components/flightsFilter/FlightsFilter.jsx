@@ -39,11 +39,11 @@ class FlightsFilter extends Component {
                <div className="amount-price">
                   <legend>Цена</legend>
                   <div>
-                     <label htmlFor="">От</label>
+                     <label>От</label>
                      <input type="text" placeholder="укажите минимум" />
                   </div>
                   <div>
-                     <label htmlFor="direct">До</label>
+                     <label>До</label>
                      <input type="text" placeholder="укажите максимум" />
                   </div>
                </div>
@@ -51,12 +51,12 @@ class FlightsFilter extends Component {
                <div className="airlines">
                   <legend>Авиакомпании</legend>
                   <div>
-                     <input type="checkbox" id="one-connection" />
+                     <input type="checkbox" id="lot_pa" />
                      <label htmlFor="one-connection">LOT Polish Airlines от 21049 р.</label>
                   </div>
                   <div>
-                     <input type="checkbox" id="direct" />
-                     <label htmlFor="direct">Аэрофлот - российские авиалинии  от 31733 р.</label>
+                     <input type="checkbox" id="airoflot" />
+                     <label htmlFor="airoflot">Аэрофлот - российские авиалинии  от 31733 р.</label>
                   </div>
                </div>
             </form>
